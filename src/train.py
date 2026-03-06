@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import os
 import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -9,7 +10,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 print("Name: Panduga Maheswar Reddy")
 print("Roll Number: 2022BCS0185")
-
+os.makedirs("outputs", exist_ok=True)
 # Load dataset
 df = pd.read_csv("data/winequality-red.csv", sep=";")
 
