@@ -8,6 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 
 print("Name: Panduga Maheswar Reddy")
 print("Roll Number: 2022BCS0185")
@@ -26,10 +27,16 @@ X_train, X_test, y_train, y_test = train_test_split(
 # Pipeline with preprocessing
 
 
-model = Pipeline([
-    ("scaler", StandardScaler()),
-    ("model", LinearRegression())
-])
+#model = Pipeline([
+#    ("scaler", StandardScaler()),
+#    ("model", LinearRegression())
+#])
+
+model = RandomForestRegressor(
+    n_estimators=50,
+    max_depth=10,
+    random_state=42
+)
 
 # Train model
 model.fit(X_train, y_train)
