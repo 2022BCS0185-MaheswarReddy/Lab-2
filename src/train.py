@@ -7,6 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.linear_model import LinearRegression
 
 print("Name: Panduga Maheswar Reddy")
 print("Roll Number: 2022BCS0185")
@@ -23,9 +24,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Pipeline with preprocessing
+
+
 model = Pipeline([
     ("scaler", StandardScaler()),
-    ("model", Ridge(alpha=1.0))
+    ("model", LinearRegression())
 ])
 
 # Train model
